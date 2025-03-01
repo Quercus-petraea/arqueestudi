@@ -1,0 +1,77 @@
+
+/* Modify body text color */
+body {
+	font-size: 0.8rem !important;
+	font-family: 'Inter', sans-serif !important;
+	color: black !important;
+}
+
+/* Modify link text color */
+a {
+	color: black !important;
+}
+a:hover {
+	color: black !important;
+}
+a:focus {
+	color: black !important;
+}
+a.active {
+	font-weight: normal !important;
+}
+
+/* Modify link underline only when hovering links inside paragraph */
+p a {
+	text-decoration: none !important;
+}
+p a:hover {
+	text-decoration: underline !important;
+}
+
+/* Modify current page line */
+a.px-2 {
+	padding-right: 0rem !important;
+	padding-left: 0rem !important;
+}
+
+
+/* Modify backgound color */
+.bg-light {
+	background-color: white !important;
+}
+
+/* Modify cards */
+.card {
+	border: none;
+}
+.card-hover-text{
+    display: none;
+}
+.card:hover .card-text{
+    display: none;
+}
+.card:hover .card-hover-text{
+    display: block;
+}
+a.card-hover-text{
+    text-decoration: none;
+}
+/* Modify cards to display names on touchscreen devices */
+@media (pointer: coarse) {
+    /* Styles for touch devices */
+    .card-hover-text {
+        display: block;
+    }
+}
+
+
+/* Make carousel fill the entire window height */
+    .carousel, .carousel-inner, .carousel-item {
+      height: 100vh; /* Full viewport height */
+    }
+
+    .carousel-item img {
+      object-fit: cover; /* Ensure images cover the space without distorting */
+      width: 100%;
+      height: 100%;
+    }
