@@ -1,7 +1,7 @@
 
 /* Modify body text color */
 body {
-	font-size: 0.8rem !important;
+	font-size: 1rem !important;
 	font-family: 'Inter', sans-serif !important;
 	color: black !important;
 }
@@ -74,4 +74,12 @@ a.card-hover-text{
       object-fit: cover; /* Ensure images cover the space without distorting */
       width: 100%;
       height: 100%;
+    }
+
+/* Center project name inside the navbar */
+.navbar-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5rem;
     }
