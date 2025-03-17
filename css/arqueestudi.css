@@ -83,3 +83,10 @@ a.card-hover-text{
     transform: translateX(-50%);
     margin-top: 0.5rem;
     }
+
+/* Ensure full width of project images in project page */
+a.w-100 img {
+    display: block;   /* removes inline spacing */
+    width: 100%;      /* ensures full width */
+    height: auto;     /* keeps aspect ratio */
+}
