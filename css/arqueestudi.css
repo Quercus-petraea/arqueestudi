@@ -6,6 +6,11 @@ body {
 	color: black !important;
 }
 
+/* Project text */
+.project-text {
+  font-size: 1rem;
+}
+
 /* Modify link text color */
 a {
 	color: black !important;
@@ -33,7 +38,6 @@ a.px-2 {
 	padding-right: 0rem !important;
 	padding-left: 0rem !important;
 }
-
 
 /* Modify backgound color */
 .bg-light {
@@ -64,7 +68,6 @@ a.card-hover-text{
     }
 }
 
-
 /* Make carousel fill the entire window height */
     .carousel, .carousel-inner, .carousel-item {
       height: 100vh; /* Full viewport height */
@@ -81,12 +84,158 @@ a.card-hover-text{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 0.5rem;
+    margin-top: 0.6rem;
     }
 
-/* Ensure full width of project images in project page */
-a.w-100 img {
-    display: block;   /* removes inline spacing */
-    width: 100%;      /* ensures full width */
-    height: auto;     /* keeps aspect ratio */
+/* Content margin from top to avoid navbar overlap */
+.mt-content {
+    margin-top: 4rem;
+    }
+
+/* Justify paragraph text */
+p {
+  text-align: justify;
 }
+
+
+/* Reset box-sizing for consistent sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* Ensure no padding on any Bootstrap container around the full-width image */
+.full-width-image {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+.full-width-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Generic full-width container with ratio */
+.ratio-full {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  position: relative;
+}
+.ratio-full img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Portrait Ratios */
+.ratio-4x5-full {
+  aspect-ratio: 4 / 5;
+}
+.ratio-3x4-full {
+  aspect-ratio: 3 / 4;
+}
+.ratio-2x3-full {
+  aspect-ratio: 2 / 3;
+}
+/* Square Ratio */
+.ratio-1x1-full {
+  aspect-ratio: 1 / 1;
+}
+/* Landscape Ratios */
+.ratio-4x3-full {
+  aspect-ratio: 4 / 3;
+}
+.ratio-16x9-full {
+  aspect-ratio: 16 / 9;
+}
+.ratio-21x9-full {
+  aspect-ratio: 21 / 9;
+}
+
+
+
+/* Custom margins 
+| Breakpoint | Min-width |
+| ---------- | --------- |
+| `sm`       | 576px     |
+| `md`       | 768px     |
+| `lg`       | 992px     |
+| `xl`       | 1200px    |
+| `xxl`      | 1400px    |*/
+
+
+@media (min-width: 992px) {
+    .mt-l {
+    margin-top: 5rem !important;
+    }
+    .mt-xl {
+    margin-top: 7.5rem !important;
+    }
+    .mt-xxl {
+    margin-top: 10rem !important;
+    }
+    .mt-xxxl {
+    margin-top: 12.5rem !important;
+    }
+}
+@media (min-width: 576px) {
+    .mt-l {
+    margin-top: 3rem !important;
+    }
+    .mt-xl {
+    margin-top: 3rem !important;
+    }
+    .mt-xxl {
+    margin-top: 3rem !important;
+    }
+    .mt-xxxl {
+    margin-top: 3rem !important;
+    }
+}
+
+
+
+/* Custom ratios */
+.ratio-2x3 {
+  aspect-ratio: 2 / 3;
+}
+.ratio-3x4 {
+  aspect-ratio: 3 / 4;
+}
+.ratio-4x5 {
+  aspect-ratio: 4 / 5;
+}
+/* Bootstrap built-in ratios (added as a reminder) */
+.ratio-1x1 {
+  aspect-ratio: 1 / 1;
+}
+.ratio-4x3 {
+  aspect-ratio: 4 / 3;
+}
+.ratio-16x9 {
+  aspect-ratio: 16 / 9;
+}
+.ratio-21x9 {
+  aspect-ratio: 21 / 9;
+}
+
+
+/* Project hero image */
+.hero-image {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
