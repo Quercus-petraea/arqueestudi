@@ -88,7 +88,7 @@ module.exports = function(eleventyConfig) {
     altText,
     ratioClass = "",
     imgClass = "",
-    loading = "eager"
+    loading = ""
   ) => {
     const folder = "masonry";
     const inputDir = path.join(__dirname, "images", "web", folder);
