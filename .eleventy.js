@@ -86,10 +86,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksShortcode("responsive_image_masonry", (
     baseName,
     altText,
-    imgClass,
+    ratioClass = "",
+    imgClass = "",
     loading = "eager"
   ) => {
-    const inputDir = path.join(__dirname, "images", "web", "masonry");
+    const folder = "masonry";
+    const inputDir = path.join(__dirname, "images", "web", folder);
     const widths = [600, 800, 1200, 1600];
 
     const availableWidths = widths.filter(width => {
@@ -102,25 +104,37 @@ module.exports = function(eleventyConfig) {
     }
 
     const srcset = availableWidths
-      .map(w => `/images/web/masonry/${baseName}-${w}.jpg ${w}w`)
+      .map(w => `/images/web/${folder}/${baseName}-${w}.jpg ${w}w`)
       .join(",\n            ");
 
     const smallestWidth = Math.min(...availableWidths);
 
+    const wrapperStart = ratioClass ? `<div class="${ratioClass}">` : "";
+    const wrapperEnd = ratioClass ? `</div>` : "";
+
+    const finalImgClass = ratioClass
+      ? "w-100 h-100 object-fit-cover"
+      : (imgClass || "img-fluid");
+
     return `
-      <img
-        class="${imgClass}"
-        src="/images/web/masonry/${baseName}-${smallestWidth}.jpg"
-        srcset="${srcset}"
-        sizes="(max-width: 600px) 600px,
-              (max-width: 900px) 800px,
-              (max-width: 1200px) 1200px,
-              1600px"
-        alt="${altText}"
-        loading="${loading}"
-      />
+      ${wrapperStart}
+        <img
+          class="${finalImgClass}"
+          src="/images/web/${folder}/${baseName}-${smallestWidth}.jpg"
+          srcset="
+            ${srcset}
+          "
+          sizes="(max-width: 600px) 600px,
+                (max-width: 900px) 800px,
+                (max-width: 1200px) 1200px,
+                1600px"
+          alt="${altText}"
+          loading="${loading}"
+        />
+      ${wrapperEnd}
     `;
   });
+
 
 
   return {
