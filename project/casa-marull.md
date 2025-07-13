@@ -13,7 +13,7 @@ folder: casa-marull
 
   </section>
 
-  <div class="bg-light" style="margin-top: 20px;">
+  <div class="bg-light" style="margin-top: 40px;">
     <div class="justify-content-center">
       <h5 class="text-center mb-4 d-block d-sm-none">{{ title }}</h5>
       <div class="justify-content-center"></div>
